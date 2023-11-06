@@ -36,7 +36,7 @@ Here we splitted Policy network into twon parts. The critical code snippets are 
 
 ## Splitation of Policy Network
 
-```python
+```
 self.spi_head_conv = Conv(conv_channels, head_channels, 1, True)
 self.spi_hidden_fc = Dense(head_features, hidden_features, True)
 self.spi_fc = Dense(hidden_features, mini_board_size, False)
@@ -48,7 +48,7 @@ self.epi_fc = Dense(hidden_features, mini_board_size, False)
 
 ## Smart Combination for Inference/Back-propagation
 
-```python
+```
 spi = self.spi_head_conv(out)
 spi = self.spi_hidden_fc(spi.flatten(1))
 spi = self.spi_fc(spi)
